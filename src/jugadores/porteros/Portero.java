@@ -34,4 +34,14 @@ public class Portero extends Jugador {
 		return "Portero [nombre: "+ getNombre() + ", dorsal: " + getDorsal() + ", equipo: " + getEquipo() + ", paradas: " + getParadas() + "]";
 	}
 	
+	@Override
+	public boolean equals(Object ob2) {
+		Portero j2 = (Portero) ob2;
+		boolean result = false;
+		if(j2.getIdJugador() == this.getIdJugador()) {
+			result = true;
+		}
+		return result;
+	}
+	
 }

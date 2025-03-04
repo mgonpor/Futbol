@@ -51,7 +51,7 @@ public abstract class Jugador {
 	
 	@Override
 	public String toString() {
-		return "Jugador [nombre: " + getNombre() + ", dorsal: " + getDorsal() + ", idEquipo: " + getEquipo() + "]";
+		return "Jugador [nombre: " + getNombre() + ", dorsal: " + getDorsal() + ", equipo: " + getEquipo() + "]";
 	}
 	
 	@Override
