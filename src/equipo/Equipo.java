@@ -1,7 +1,6 @@
 package equipo;
 
 import java.util.ArrayList;
-
 import jugadores.Jugador;
 import jugadores.Puesto;
 import jugadores.centrocampistas.Mediapunta;
