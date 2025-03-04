@@ -48,4 +48,20 @@ public abstract class Jugador {
 	}
 	
 	public abstract void mostrarDatos();
+	
+	@Override
+	public String toString() {
+		return "Jugador [nombre: " + getNombre() + ", dorsal: " + getDorsal() + ", idEquipo: " + getEquipo() + "]";
+	}
+	
+	@Override
+	public boolean equals(Object ob2) {
+		Jugador j2 = (Jugador) ob2;
+		boolean result = false;
+		if(j2.getIdJugador() == this.getIdJugador()) {
+			result = true;
+		}
+		return result;
+	}
+	
 }
