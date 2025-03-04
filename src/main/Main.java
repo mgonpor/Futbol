@@ -2,19 +2,22 @@ package main;
 
 import java.util.Scanner;
 
+import jugadores.delanteros.DelanteroCentro;
+
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		main1(sc);
+		DelanteroCentro d1 = new DelanteroCentro("pepe", 12, 1, 12, 2);
+		DelanteroCentro d2 = d1;
+		System.out.println(d1.equals(d2));
 	}
 
-	public static void main1(Scanner sc) {
+	public static void menu(Scanner sc) {
 		System.out.println("\nCreamos un equipo e insertamos los jugadores: ");
-	}
-	
-	public static void main2(Scanner sc) {
+		
+
 		System.out.println("\nDemostración de la selección dinámica con el método mostrarDatos(): ");
 		
 	}
+	
 }
