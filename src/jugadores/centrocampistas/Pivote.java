@@ -9,6 +9,7 @@ public class Pivote extends Centrocampista {
 	}
 	public Pivote(String nombre, int dorsal, int equipo, int pasesCompletados, int intercepciones) {
 		super(nombre, dorsal, equipo, pasesCompletados);
+		setIntercepciones(intercepciones);
 	}
 
 	public int getIntercepciones() {
