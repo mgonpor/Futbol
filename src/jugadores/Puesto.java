@@ -1,4 +1,4 @@
-package jugadores.defensas;
+package jugadores;
 
 public enum Puesto {
 	IZQUIERDO, DERECHO

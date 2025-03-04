@@ -1,5 +1,7 @@
 package jugadores.defensas;
 
+import jugadores.Puesto;
+
 public class Lateral extends Defensa {
 	
 	private Puesto puesto;
@@ -9,8 +11,6 @@ public class Lateral extends Defensa {
 		setPuesto(puesto);
 	}
 	
-	
-
 	public String getPuesto() {
 		return this.puesto.toString();
 	}
@@ -28,15 +28,6 @@ public class Lateral extends Defensa {
 	public String toString() {
 		return "Lateral [nombre: "+ getNombre() + ", dorsal: " + getDorsal() + ", equipo: " + getEquipo() + ", disputas realizadas: " + getDisputasRealizadas() + ", puesto: " + getPuesto().toLowerCase() + "]";
 	}
-	
-	@Override
-	public boolean equals(Object ob2) {
-		Lateral j2 = (Lateral) ob2;
-		boolean result = false;
-		if(j2.getIdJugador() == this.getIdJugador()) {
-			result = true;
-		}
-		return result;
-	}
+
 
 }

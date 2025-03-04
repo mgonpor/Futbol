@@ -8,6 +8,9 @@ public class Central extends Defensa {
 		super(nombre, dorsal, equipo, disputasRealizadas);
 		setEntradas(entradas);
 	}
+	public Central(String nombre, int dorsal, int equipo, int disputasRealizadas) {
+		super(nombre, dorsal, equipo, disputasRealizadas);
+	}
 
 	public int getEntradas() {
 		return entradas;
@@ -28,16 +31,6 @@ public class Central extends Defensa {
 	@Override
 	public String toString() {
 		return "Central [nombre: "+ getNombre() + ", dorsal: " + getDorsal() + ", equipo: " + getEquipo() + ", disputas realizadas: " + getDisputasRealizadas() + ", entradas: " + getEntradas() + "]";
-	}
-	
-	@Override
-	public boolean equals(Object ob2) {
-		Lateral j2 = (Lateral) ob2;
-		boolean result = false;
-		if(j2.getIdJugador() == this.getIdJugador()) {
-			result = true;
-		}
-		return result;
 	}
 	
 }
