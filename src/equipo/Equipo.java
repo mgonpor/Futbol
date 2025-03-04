@@ -1,5 +1,7 @@
 package equipo;
 
+import java.util.ArrayList;
+
 import jugadores.Jugador;
 import jugadores.Puesto;
 import jugadores.centrocampistas.Mediapunta;
@@ -12,10 +14,32 @@ import jugadores.porteros.Portero;
 
 public class Equipo {
 
+	private int idEquipo;
+	private String nombreEquipo;
 	private int[] arrayJugadores;
 	
+	private static int ultimoIdEquipo = 1;
+	
 	public Equipo() {
+		this.idEquipo = ultimoIdEquipo ++;
+		setNombreEquipo("Equipo"+this.idEquipo);
 		this.arrayJugadores = new int[11];
+	}
+	public Equipo(String nombreEquipo) {
+		this.idEquipo = ultimoIdEquipo ++;
+		setNombreEquipo(nombreEquipo);
+		this.arrayJugadores = new int[] {0,0,0,0,0,0,0,0,0,0,0};
+	}
+	
+	public int getIdEquipo() {
+		return this.idEquipo;
+	}
+	
+	public String getNombreEquipo() {
+		return this.nombreEquipo;
+	}
+	public void setNombreEquipo(String nombreEquipo) {
+		this.nombreEquipo = nombreEquipo;
 	}
 	
 	public boolean addJugador(int pos, Jugador j) {
@@ -129,5 +153,24 @@ public class Equipo {
 				System.out.println("\nEsa posición no existe, van de 0 a 10.");
 		}
 		return result;
+	}
+	
+	public void mostrarAlineación() {
+		boolean alineacionCompleta = false;
+		ArrayList<Integer> faltan = new ArrayList<Integer>();
+		for(int i=0; i<11; i++) {
+			if(this.arrayJugadores[i] == 0) {
+				alineacionCompleta = true;
+				faltan.add((Integer) i);
+			}
+		}
+		
+		if(alineacionCompleta) {
+			System.out.println("\nLa alineación está incompleta, faltan las posiciones " + faltan.toString());
+		}else {
+			for(int i=0; i<11; i++) {
+				
+			}
+		}
 	}
 }
