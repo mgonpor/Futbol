@@ -1,5 +1,8 @@
 package jugadores;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Jugador {
 	
 	private int idJugador;
@@ -8,12 +11,24 @@ public abstract class Jugador {
 	private int equipo;
 	
 	private static int ultimoIdJugador = 1;
+	private static List<Jugador> listaJugadores = new ArrayList<Jugador>();
 	
 	public Jugador(String nombre, int dorsal, int equipo) {
 		this.idJugador = ultimoIdJugador ++;
 		setNombre(nombre);
 		setDorsal(dorsal);
 		setEquipo(equipo);
+		listaJugadores.add(this);
+	}
+	
+	public static Jugador getJugadorPorId(int id) {
+		Jugador devolver = null;
+		if(listaJugadores.get(id).getIdJugador() == id) {
+			devolver = listaJugadores.get(id);
+		}else {
+			System.out.println("\nJugador no encontrado, devuelve null.");
+		}
+		return devolver;
 	}
 	
 	public String getNombre() {

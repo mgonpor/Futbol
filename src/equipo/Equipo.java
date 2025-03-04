@@ -16,19 +16,19 @@ public class Equipo {
 
 	private int idEquipo;
 	private String nombreEquipo;
-	private int[] arrayJugadores;
+	private Jugador[] arrayJugadores;
 	
 	private static int ultimoIdEquipo = 1;
 	
 	public Equipo() {
 		this.idEquipo = ultimoIdEquipo ++;
 		setNombreEquipo("Equipo"+this.idEquipo);
-		this.arrayJugadores = new int[11];
+		this.arrayJugadores = new Jugador[11];
 	}
 	public Equipo(String nombreEquipo) {
 		this.idEquipo = ultimoIdEquipo ++;
 		setNombreEquipo(nombreEquipo);
-		this.arrayJugadores = new int[] {0,0,0,0,0,0,0,0,0,0,0};
+		this.arrayJugadores = new Jugador[11];
 	}
 	
 	public int getIdEquipo() {
@@ -42,21 +42,21 @@ public class Equipo {
 		this.nombreEquipo = nombreEquipo;
 	}
 	
-	public boolean addJugador(int pos, Jugador j) {
+	public boolean addJugador(int pos, int id) {
 		boolean result = false;
 		switch(pos) {
 			case 0: 
-				if(Portero.class == j.getClass()) {
-					this.arrayJugadores[0] = ((Portero) j).getIdJugador();
+				if(Portero.class == Jugador.getJugadorPorId(id).getClass()) {
+					this.arrayJugadores[0] = Jugador.getJugadorPorId(id);
 					result = true;
 				}else {
 					System.out.println("\nEste jugador no es Portero, no puede ir en la posición 0.");
 				}
 				break;
 			case 1: 
-				if(Lateral.class == j.getClass()) {
-					if(((Lateral) j).getPuesto() != Puesto.IZQUIERDO.toString()) {
-						this.arrayJugadores[1] = ((Lateral) j).getIdJugador();
+				if(Lateral.class == Jugador.getJugadorPorId(id).getClass()) {
+					if(((Lateral)Jugador.getJugadorPorId(id)).getPuesto() != Puesto.IZQUIERDO.toString()) {
+						this.arrayJugadores[1] = Jugador.getJugadorPorId(id);
 						result = true;
 					}else {
 						System.out.println("\nEste lateral no es IZQUIERDO, no puede ir en la posición 1, sino en la 4.");
@@ -66,25 +66,25 @@ public class Equipo {
 				}
 				break;
 			case 2: 
-				if(Central.class == j.getClass()) {
-					this.arrayJugadores[2] = ((Central) j).getIdJugador();
+				if(Central.class == Jugador.getJugadorPorId(id).getClass()) {
+					this.arrayJugadores[2] = Jugador.getJugadorPorId(id);
 					result = true;
 				}else {
 					System.out.println("\nEste jugador no es Central, no puede ir en la posición 2 ni 3.");
 				}
 				break;
 			case 3: 
-				if(Central.class == j.getClass()) {
-					this.arrayJugadores[3] = ((Central) j).getIdJugador();
+				if(Central.class == Jugador.getJugadorPorId(id).getClass()) {
+					this.arrayJugadores[3] = Jugador.getJugadorPorId(id);
 					result = true;
 				}else {
 					System.out.println("\nEste jugador no es Central, no puede ir en la posición 2 ni 3.");
 				}
 				break;
 			case 4: 
-				if(Lateral.class == j.getClass()) {
-					if(((Lateral) j).getPuesto() != Puesto.DERECHO.toString()) {
-						this.arrayJugadores[4] = ((Lateral) j).getIdJugador();
+				if(Lateral.class == Jugador.getJugadorPorId(id).getClass()) {
+					if(((Lateral) Jugador.getJugadorPorId(id)).getPuesto() != Puesto.DERECHO.toString()) {
+						this.arrayJugadores[4] = Jugador.getJugadorPorId(id);
 						result = true;
 					}else {
 						System.out.println("\nEste lateral no es DERECHO, no puede ir en la posición 4, sino en la 1.");
@@ -94,33 +94,33 @@ public class Equipo {
 				}
 				break;
 			case 5: 
-				if(Pivote.class == j.getClass()) {
-					this.arrayJugadores[5] = ((Pivote) j).getIdJugador();
+				if(Pivote.class == Jugador.getJugadorPorId(id).getClass()) {
+					this.arrayJugadores[5] = Jugador.getJugadorPorId(id);
 					result = true;
 				}else {
 					System.out.println("\nEste jugador no es Pivote, no puede ir en la posición 5 ni 6.");
 				}
 				break;
 			case 6: 
-				if(Pivote.class == j.getClass()) {
-					this.arrayJugadores[6] = ((Pivote) j).getIdJugador();
+				if(Pivote.class == Jugador.getJugadorPorId(id).getClass()) {
+					this.arrayJugadores[6] = Jugador.getJugadorPorId(id);
 					result = true;
 				}else {
 					System.out.println("\nEste jugador no es Pivote, no puede ir en la posición 5 ni 6.");
 				}
 				break;
 			case 7: 
-				if(Mediapunta.class == j.getClass()) {
-					this.arrayJugadores[7] = ((Mediapunta) j).getIdJugador();
+				if(Mediapunta.class == Jugador.getJugadorPorId(id).getClass()) {
+					this.arrayJugadores[7] = Jugador.getJugadorPorId(id);
 					result = true;
 				}else {
 					System.out.println("\nEste jugador no es Mediapunta, no puede ir en la posición 7.");
 				}
 				break;
 			case 8: 
-				if(Extremo.class == j.getClass()) {
-					if(((Extremo) j).getPuesto() != Puesto.IZQUIERDO.toString()) {
-						this.arrayJugadores[8] = ((Extremo) j).getIdJugador();
+				if(Extremo.class == Jugador.getJugadorPorId(id).getClass()) {
+					if(((Extremo) Jugador.getJugadorPorId(id)).getPuesto() != Puesto.IZQUIERDO.toString()) {
+						this.arrayJugadores[8] = Jugador.getJugadorPorId(id);
 						result = true;
 					}else {
 						System.out.println("\nEste extremo no es IZQUIERDO, no puede ir en la posición 8, sino en la 9.");
@@ -130,9 +130,9 @@ public class Equipo {
 				}
 				break;
 			case 9: 
-				if(Extremo.class == j.getClass()) {
-					if(((Extremo) j).getPuesto() != Puesto.DERECHO.toString()) {
-						this.arrayJugadores[9] = ((Extremo) j).getIdJugador();
+				if(Extremo.class == Jugador.getJugadorPorId(id).getClass()) {
+					if(((Extremo) Jugador.getJugadorPorId(id)).getPuesto() != Puesto.DERECHO.toString()) {
+						this.arrayJugadores[9] = Jugador.getJugadorPorId(id);
 						result = true;
 					}else {
 						System.out.println("\nEste extremo no es DERECHO, no puede ir en la posición 9, sino en la 8.");
@@ -142,8 +142,8 @@ public class Equipo {
 				}
 				break;
 			case 10: 
-				if(DelanteroCentro.class == j.getClass()) {
-					this.arrayJugadores[10] = ((DelanteroCentro) j).getIdJugador();
+				if(DelanteroCentro.class == Jugador.getJugadorPorId(id).getClass()) {
+					this.arrayJugadores[10] = Jugador.getJugadorPorId(id);
 					result = true;
 				}else {
 					System.out.println("\nEste jugador no es Delantero Centro, no puede ir en la posición 10.");
@@ -159,7 +159,7 @@ public class Equipo {
 		boolean alineacionCompleta = false;
 		ArrayList<Integer> faltan = new ArrayList<Integer>();
 		for(int i=0; i<11; i++) {
-			if(this.arrayJugadores[i] == 0) {
+			if(this.arrayJugadores[i] == null) { 
 				alineacionCompleta = true;
 				faltan.add((Integer) i);
 			}
@@ -168,9 +168,16 @@ public class Equipo {
 		if(alineacionCompleta) {
 			System.out.println("\nLa alineación está incompleta, faltan las posiciones " + faltan.toString());
 		}else {
-			for(int i=0; i<11; i++) {
-				
-			}
+			System.out.println("\n    ALINEACIÓN:");
+			System.out.printf("\n0. Portero: %s - %d", this.arrayJugadores[0].getNombre(), this.arrayJugadores[0].getDorsal());
+			System.out.printf("\n1. Lateral izquierdo: %s - %d", this.arrayJugadores[1].getNombre(), this.arrayJugadores[1].getDorsal());
+			System.out.printf("\n2,3. Centrales: %s - %d | %s - %d", this.arrayJugadores[2].getNombre(), this.arrayJugadores[2].getDorsal(), this.arrayJugadores[3].getNombre(), this.arrayJugadores[3].getDorsal());
+			System.out.printf("\n4. Lateral derecho: %s - %d", this.arrayJugadores[4].getNombre(), this.arrayJugadores[4].getDorsal());
+			System.out.printf("\n5,6. Pivotes: %s - %d | %s - %d", this.arrayJugadores[5].getNombre(), this.arrayJugadores[5].getDorsal(), this.arrayJugadores[6].getNombre(), this.arrayJugadores[6].getDorsal());
+			System.out.printf("\n7. Mediapunta: %s - %d", this.arrayJugadores[7].getNombre(), this.arrayJugadores[7].getDorsal());
+			System.out.printf("\n8. Extremo izquierdo: %s - %d", this.arrayJugadores[8].getNombre(), this.arrayJugadores[8].getDorsal());
+			System.out.printf("\n9. Extremo derecho: %s - %d", this.arrayJugadores[9].getNombre(), this.arrayJugadores[9].getDorsal());
+			System.out.printf("\n10. Delantero centro: %s - %d", this.arrayJugadores[10].getNombre(), this.arrayJugadores[10].getDorsal());
 		}
 	}
 }
