@@ -45,7 +45,7 @@ public class Equipo {
 		boolean result = false;
 		switch(pos) {
 			case 0: 
-				if(Portero.class == Jugador.getJugadorPorId(id).getClass()) {
+				if(Portero.class == Jugador.getJugadorPorId(id).getClass()) {	// Jugador.getJugadorPorId(id).instanceOf(Portero)
 					this.arrayJugadores[0] = Jugador.getJugadorPorId(id);
 					result = true;
 				}else {
