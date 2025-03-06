@@ -54,7 +54,7 @@ public class Equipo {
 				break;
 			case 1: 
 				if(Lateral.class == Jugador.getJugadorPorId(id).getClass()) {
-					if(((Lateral)Jugador.getJugadorPorId(id)).getPuesto() != Puesto.IZQUIERDO.toString()) {
+					if(((Lateral)Jugador.getJugadorPorId(id)).getPuesto() == Puesto.IZQUIERDO.toString()) {
 						this.arrayJugadores[1] = Jugador.getJugadorPorId(id);
 						result = true;
 					}else {
@@ -82,7 +82,7 @@ public class Equipo {
 				break;
 			case 4: 
 				if(Lateral.class == Jugador.getJugadorPorId(id).getClass()) {
-					if(((Lateral) Jugador.getJugadorPorId(id)).getPuesto() != Puesto.DERECHO.toString()) {
+					if(((Lateral) Jugador.getJugadorPorId(id)).getPuesto() == Puesto.DERECHO.toString()) {
 						this.arrayJugadores[4] = Jugador.getJugadorPorId(id);
 						result = true;
 					}else {
@@ -118,7 +118,7 @@ public class Equipo {
 				break;
 			case 8: 
 				if(Extremo.class == Jugador.getJugadorPorId(id).getClass()) {
-					if(((Extremo) Jugador.getJugadorPorId(id)).getPuesto() != Puesto.IZQUIERDO.toString()) {
+					if(((Extremo) Jugador.getJugadorPorId(id)).getPuesto() == Puesto.IZQUIERDO.toString()) {
 						this.arrayJugadores[8] = Jugador.getJugadorPorId(id);
 						result = true;
 					}else {
@@ -130,7 +130,7 @@ public class Equipo {
 				break;
 			case 9: 
 				if(Extremo.class == Jugador.getJugadorPorId(id).getClass()) {
-					if(((Extremo) Jugador.getJugadorPorId(id)).getPuesto() != Puesto.DERECHO.toString()) {
+					if(((Extremo) Jugador.getJugadorPorId(id)).getPuesto() == Puesto.DERECHO.toString()) {
 						this.arrayJugadores[9] = Jugador.getJugadorPorId(id);
 						result = true;
 					}else {

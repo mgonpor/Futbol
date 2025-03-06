@@ -10,11 +10,11 @@ public abstract class Jugador {
 	private int dorsal;
 	private int equipo;
 	
-	private static int ultimoIdJugador = 1;
+	private static int ultimoIdJugador = 0;
 	private static List<Jugador> listaJugadores = new ArrayList<Jugador>();
 	
 	public Jugador(String nombre, int dorsal, int equipo) {
-		this.idJugador = ultimoIdJugador ++;
+		this.idJugador = ++ultimoIdJugador;
 		setNombre(nombre);
 		setDorsal(dorsal);
 		setEquipo(equipo);
@@ -23,10 +23,15 @@ public abstract class Jugador {
 	
 	public static Jugador getJugadorPorId(int id) {
 		Jugador devolver = null;
-		if(listaJugadores.get(id).getIdJugador() == id) {
-			devolver = listaJugadores.get(id);
-		}else {
-			System.out.println("\nJugador no encontrado, devuelve null.");
+		boolean encontrado =false;
+		for(Jugador elem : listaJugadores) {
+			if(elem.getIdJugador() == id) {
+				devolver = elem;
+				encontrado = true;
+			}
+		}
+		if(!encontrado) {
+			throw new IllegalArgumentException("Jugador con ese id no encontrado");
 		}
 		return devolver;
 	}
@@ -59,7 +64,11 @@ public abstract class Jugador {
 	}
 	
 	public int getIdJugador() {
-		return idJugador;
+		return this.idJugador;
+	}
+	
+	public static List<Jugador> getLista(){
+		return listaJugadores;
 	}
 	
 	public abstract void mostrarDatos();
