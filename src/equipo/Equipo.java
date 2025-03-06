@@ -41,6 +41,9 @@ public class Equipo {
 		this.nombreEquipo = nombreEquipo;
 	}
 	
+	public Jugador[] getArrayJugadores() {
+		return arrayJugadores;
+	}
 	public boolean addJugador(int pos, int id) {
 		boolean result = false;
 		switch(pos) {

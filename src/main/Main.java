@@ -65,11 +65,13 @@ public class Main {
 			equipoA.addJugador(8, 15);
 			equipoA.addJugador(9, 17);
 			equipoA.addJugador(10, 19);
+			equipoA.addJugador(10, 20);
 			break;
 		case 2:
 			System.out.println("\nDemostración de la selección dinámica con el método mostrarDatos(): ");
-			Jugador prueba= new Central("Pepe", 99, 1, 23, 84);
-			prueba.mostrarDatos();
+			for(Jugador j : Jugador.getLista()) {
+				j.mostrarDatos();
+			}
 			break;
 		case 3:
 			equipoA.mostrarAlineación();
